@@ -20,7 +20,6 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
 
-
         return response($Category,201);
 
     }
