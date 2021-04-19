@@ -22,7 +22,8 @@ use App\Http\Controllers\ItemController;
  * */
 Route::get('/categories', [CategoryController::class, 'show_all']);
 Route::post('/categories', [CategoryController::class, 'store']);
-Route::get('/category/{id}/items', [CategoryController::class, 'show_category_items']);
+Route::get('/categories/{id}/items', [CategoryController::class, 'show_category_items']);
+Route::delete('/categories/{id}/items', [CategoryController::class, 'delete_category_items']);
 
 /*
  * Item Routes
