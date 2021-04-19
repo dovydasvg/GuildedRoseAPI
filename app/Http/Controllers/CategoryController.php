@@ -12,5 +12,22 @@ class CategoryController extends Controller
         return Category::all();
     }
 
+    public function store(Request $request)
+    {
+        $this->validate($request);
+
+        $Category = Category::create([
+            'name' => $request->name,
+        ]);
+
+    }
+
+    private function validate(Request $request)
+    {
+        $request->validate([
+           'name' => 'required',
+        ]);
+    }
+
 
 }
