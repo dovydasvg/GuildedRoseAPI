@@ -27,7 +27,7 @@ class CategoryController extends Controller
     private function validate(Request $request)
     {
         $request->validate([
-           'name' => 'required',
+           'name' => 'required|string|min:5',
         ]);
     }
 
