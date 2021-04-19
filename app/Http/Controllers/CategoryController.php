@@ -26,7 +26,24 @@ class CategoryController extends Controller
 
     public function show_category_items($id)
     {
-        return Category::find($id)->items;
+        $category = Category::find($id);
+
+        if($category === null){
+            return response('Category not found',404);
+        }
+        return $category->items;
+    }
+
+    public function delete_category_items($id)
+    {
+        $category = Category::find($id);
+
+        if($category === null){
+            return response('Category not found',404);
+        }
+
+        return response(($category->items()->delete()).' items deleted.',200);
+
     }
 
     public function validateCategory(Request $request): array
@@ -35,6 +52,7 @@ class CategoryController extends Controller
            'name' => 'required|string|min:5',
         ]);
     }
+
 
 
 }
