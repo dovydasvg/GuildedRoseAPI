@@ -28,6 +28,7 @@ Route::post('/categories', [CategoryController::class, 'store']);
  * */
 Route::get('/items', [ItemController::class, 'show_all']);
 Route::post('/items', [ItemController::class, 'store']);
+Route::put('/items/{id}', [ItemController::class, 'update']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
