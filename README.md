@@ -3,6 +3,8 @@
 #### Hi! I hope you'll enjoy working with this simple API to manage your Categories and Items.
 #### May You find all the Sulfuras in the Kingdom!
 
+[Live Preview](https://gildedrose-api.herokuapp.com/)
+
 ## How to use this API
 
 
