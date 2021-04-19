@@ -27,6 +27,27 @@ class ItemController extends Controller
 
     }
 
+    public function update(Request $request, $id)
+    {
+        $fields = $this->validateItem($request);
+
+        $item = Item::find($id);
+
+        if($item === null){
+            return response('This item doesnt exist', 404);
+        }
+
+        $item->update([
+            'name' => $fields['name'],
+            'value' => $fields['value'],
+            'quality' => $fields['quality'],
+            'category_id' => $fields['category_id'],
+        ]);
+
+        return $item;
+
+    }
+
     public function validateItem(Request $request): array
     {
         return $request->validate([
