@@ -51,7 +51,7 @@ class ItemController extends Controller
     public function validateItem(Request $request): array
     {
         return $request->validate([
-            'name' => 'required|string|min:5',
+            'name' => 'required|string|ends_with:_item',
             'value' => 'required|numeric|min:10|max:100',
             'quality' => 'required|integer|min:-10|max:50',
             'category_id' => 'exists:App\Models\Category,id'
