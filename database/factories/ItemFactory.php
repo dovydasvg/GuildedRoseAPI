@@ -22,7 +22,7 @@ class ItemFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->name().'_item',
             'value' => $this->faker->randomFloat(2,10,100),
             'quality' => $this->faker->numberBetween(-10, 50),
             'category_id' => 1,
