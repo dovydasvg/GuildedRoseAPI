@@ -24,6 +24,11 @@ class CategoryController extends Controller
 
     }
 
+    public function show_category_items($id)
+    {
+        return Category::find($id)->items;
+    }
+
     public function validateCategory(Request $request): array
     {
         return $request->validate([
