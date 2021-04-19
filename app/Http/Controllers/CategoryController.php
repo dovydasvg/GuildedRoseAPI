@@ -20,6 +20,9 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
 
+
+        return response($Category,201);
+
     }
 
     private function validate(Request $request)
