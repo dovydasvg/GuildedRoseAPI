@@ -11,4 +11,6 @@ class CategoryController extends Controller
     {
         return Category::all();
     }
+
+
 }
