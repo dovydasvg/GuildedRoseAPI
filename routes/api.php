@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,17 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
+
+/*
+ * Category Routes
+ * */
 Route::get('/categories', [CategoryController::class, 'show_all']);
 Route::post('/categories', [CategoryController::class, 'store']);
+
+/*
+ * Item Routes
+ * */
+Route::get('/items', [ItemController::class, 'show_all']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
