@@ -45,12 +45,44 @@
                     <div class="grid grid-cols-1">
                         <div class="p-6">
                             <div class="flex items-center">
-                                <div class=" text-lg leading-7 font-semibold underline text-gray-900 dark:text-white">How to use this API?</div>
+                                <div class=" text-lg leading-7 font-semibold text-gray-900 dark:text-white">How to use this API?</div>
                             </div>
 
                             <div class="flex w-auto">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Everything will be written in here.
+                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm flex">
+                                    Get all categories:<br>
+                                    GET api/categories<br>
+                                    <br>
+                                    Get all items:<br>
+                                    GET api/items<br>
+                                    <br>
+                                    Create a category:<br>
+                                    POST api/categories<br>
+                                    Keys:<br>
+                                    name - integer;<br>
+                                    <br>
+                                    Create Item:<br>
+                                    POST api/items<br>
+                                    Keys:<br>
+                                    name - string. Must end with _item<br>
+                                    value - float. Between [10;100].<br>
+                                    quality - integer. [-10;50].<br>
+                                    category_id - integer. Must match an existing category.<br>
+                                    <br>
+                                    Update Item:<br>
+                                    PUT api/items<br>
+                                    Keys:<br>
+                                    name - string. Must end with _item<br>
+                                    value - float. Between [10;100].<br>
+                                    quality - integer. [-10;50].<br>
+                                    category_id - integer. Must match an existing category.<br>
+                                    <br>
+                                    Get all Items of Category:<br>
+                                    GET api/categories/{id}/items<br>
+                                    <br>
+                                    Delete all Items of Category:<br>
+                                    DELETE api/categories/{id}/items<br>
+
                                 </div>
                             </div>
                         </div>
