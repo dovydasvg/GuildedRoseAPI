@@ -44,7 +44,7 @@ class ItemController extends Controller
             'category_id' => $fields['category_id'],
         ]);
 
-        return $item;
+        return response($item,200);
 
     }
 
