@@ -54,7 +54,7 @@ class ItemController extends Controller
             'name' => 'required|string|ends_with:_item',
             'value' => 'required|numeric|min:10|max:100',
             'quality' => 'required|integer|min:-10|max:50',
-            'category_id' => 'exists:App\Models\Category,id'
+            'category_id' => 'required|exists:App\Models\Category,id'
         ]);
     }
 }
