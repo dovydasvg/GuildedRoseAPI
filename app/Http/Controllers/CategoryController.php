@@ -14,19 +14,19 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request);
+        $fields = $this->validateCategory($request);
 
         $Category = Category::create([
-            'name' => $request->name,
+            'name' => $fields['name'],
         ]);
 
         return response($Category,201);
 
     }
 
-    private function validate(Request $request)
+    public function validateCategory(Request $request): array
     {
-        $request->validate([
+        return $request->validate([
            'name' => 'required|string|min:5',
         ]);
     }
